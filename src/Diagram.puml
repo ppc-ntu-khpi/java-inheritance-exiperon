@@ -1,0 +1,65 @@
+@startuml
+
+class Animal {
+    - String speciesName
+    - int age
+    - Boolean mammal
+    - Type gender
+    + Animal()
+    + Type getGender()
+    + setGender(Type gender)
+    + int getAge()
+    + void setAge(int age)
+    + Boolean isMammal()
+    + void setMammal(Boolean mammal)
+    + String getSpeciesName()
+    + void setSpeciesName(String name)
+    + void eat()
+    + void communicate()
+    + void breathe()
+    + void sleep()
+}
+
+class Reptile {
+    - Boolean runOnWater
+    + Reptile()
+    + Boolean getRunOnWater()
+    + void setRunOnWater(Boolean waterRunner)
+    + void layEggs()
+    + void shedTheSkin()
+}
+
+class Mammal {
+    - Boolean skinCover
+    - Boolean predator
+    + Mammal()
+    + Boolean hairOrFur()
+    + void setHairOrFur(Boolean skinCover)
+    + Boolean isPredator()
+    + void setPredator(Boolean predator)
+    + void hunt()
+}
+
+class Human {
+    - String name
+    - int id
+    + Human()
+    + String getName()
+    + void setName(String name)
+    + int getId()
+    + void setId(int id)
+    + void learn()
+    + void work()
+    + void rest()
+}
+
+class TestClass {
+    + main(String[] args) : void
+}
+
+Reptile --> Animal
+Mammal --> Animal
+Human --> Mammal
+TestClass ..> Human
+
+@enduml
